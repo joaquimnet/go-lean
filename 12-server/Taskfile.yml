@@ -1,0 +1,14 @@
+version: '3'
+
+tasks:
+  build:
+    cmds:
+      - GOOS=linux go build -o bin/linux/main main.go
+      - GOOS=darwin go build -o bin/darwin/main main.go
+      - GOOS=windows go build -o bin/windows/main.exe main.go
+  run:
+    cmds:
+      - go run main.go
+  format:
+    cmds:
+      - go fmt ./main.go
